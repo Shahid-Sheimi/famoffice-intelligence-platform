@@ -1,0 +1,619 @@
+[
+  {
+    "name": "Rockefeller Capital Management",
+    "location": "New York, USA",
+    "aum_estimate": "$5B-$10B",
+    "investment_focus": "Private Equity, Venture Capital, Real Estate",
+    "stage": "Growth, Buyout",
+    "notable_investments": "Palantir, Stripe, Airbnb",
+    "source_links": [
+      "https://www.rockefellercapital.com",
+      "https://www.crunchbase.com/organization/rockefeller-capital"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Bessemer Trust",
+    "location": "San Francisco, USA",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Equities, Fixed Income, Alternatives",
+    "stage": "All stages",
+    "notable_investments": "Tesla early investor, Pinterest",
+    "source_links": [
+      "https://www.bessemer.com",
+      "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001080076"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Cox Enterprises Family Office",
+    "location": "Atlanta, USA",
+    "aum_estimate": "$1B-$5B",
+    "investment_focus": "Media, Automotive, Technology",
+    "stage": "Growth, Late-stage",
+    "notable_investments": "Autotrader, Kelley Blue Book",
+    "source_links": [
+      "https://www.coxenterprises.com",
+      "https://www.crunchbase.com/organization/cox-enterprises"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Pritzker Private Capital",
+    "location": "Chicago, USA",
+    "aum_estimate": "$5B-$10B",
+    "investment_focus": "Industrial, Healthcare, Services",
+    "stage": "Buyout, Growth",
+    "notable_investments": "Genuine Parts, Vishay Intertechnology",
+    "source_links": [
+      "https://www.pritzkergroup.com",
+      "https://www.linkedin.com/company/pritzker-group"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Sundt Family Office",
+    "location": "Phoenix, USA",
+    "aum_estimate": "$500M-$1B",
+    "investment_focus": "Real Estate, Technology",
+    "stage": "Early-stage, Growth",
+    "notable_investments": "Local tech startups, commercial real estate",
+    "source_links": [
+      "https://www.sundt.com",
+      "https://www.phoenixbusinessjournal.com"
+    ],
+    "confidence_score": "Medium"
+  },
+  {
+    "name": "Parker & company",
+    "location": "Houston, USA",
+    "aum_estimate": "$1B-$5B",
+    "investment_focus": "Energy, Infrastructure",
+    "stage": "Buyout, Project finance",
+    "notable_investments": "Pipeline operators, LNG projects",
+    "source_links": [
+      "https://www.linkedin.com/company/parker-company-family-office"
+    ],
+    "confidence_score": "Medium"
+  },
+  {
+    "name": "Koch Industries Family Office",
+    "location": "Wichita, USA",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Diversified industrials, Private equity",
+    "stage": "All stages",
+    "notable_investments": "Georgia-Pacific, Invista, Molex",
+    "source_links": [
+      "https://www.kochind.com",
+      "https://www.crunchbase.com/organization/koch-industries"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Walton Family Office",
+    "location": "Bentonville, USA",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Retail, Agriculture, Environment",
+    "stage": "Growth, Buyout",
+    "notable_investments": "Wal-Mart heritage, NatureVest",
+    "source_links": [
+      "https://www.waltonfamilyfoundation.org",
+      "https://www.forbes.com/profile/walton-family"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Lauder Family Office",
+    "location": "New York, USA",
+    "aum_estimate": "$1B-$5B",
+    "investment_focus": "Consumer goods, Beauty, Fashion",
+    "stage": "Growth, Early-stage",
+    "notable_investments": "Estee Lauder, emerging beauty brands",
+    "source_links": [
+      "https://www.elcompanies.com",
+      "https://www.forbes.com/profile/estee-lauder"
+    ],
+    "confidence_score": "Medium"
+  },
+  {
+    "name": "Sullivan & Cromwell Family Office",
+    "location": "New York, USA",
+    "aum_estimate": "$500M-$1B",
+    "investment_focus": "Financial Services, Legal Tech",
+    "stage": "Growth",
+    "notable_investments": "Legal tech startups",
+    "source_links": [
+      "https://www.sullcrom.com"
+    ],
+    "confidence_score": "Low"
+  },
+  {
+    "name": "Carlyle Family Office",
+    "location": "Washington D.C., USA",
+    "aum_estimate": "$5B-$10B",
+    "investment_focus": "Private Equity, Real Estate",
+    "stage": "Buyout, Growth",
+    "notable_investments": "Carlyle Group funds co-investments",
+    "source_links": [
+      "https://www.carlyle.com",
+      "https://www.crunchbase.com/organization/carlyle-group"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Thoma Bravo Family Office",
+    "location": "San Francisco, USA",
+    "aum_estimate": "$1B-$5B",
+    "investment_focus": "Software, Technology",
+    "stage": "Buyout",
+    "notable_investments": "McAfee, Flexera",
+    "source_links": [
+      "https://www.thoma-bravo.com",
+      "https://www.linkedin.com/company/thoma-bravo"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Sequoia Family Office",
+    "location": "Menlo Park, USA",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Technology, Healthcare",
+    "stage": "Seed, Early-stage, Growth",
+    "notable_investments": "Google, Apple, Oracle, WhatsApp",
+    "source_links": [
+      "https://www.sequoiacap.com",
+      "https://www.crunchbase.com/organization/sequoia-capital"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Andreessen Horowitz Family Office",
+    "location": "Menlo Park, USA",
+    "aum_estimate": "$5B-$10B",
+    "investment_focus": "Software, AI, Blockchain",
+    "stage": "Seed, Early-stage, Growth",
+    "notable_investments": "Facebook, Airbnb, Coinbase, Stripe",
+    "source_links": [
+      "https://a16z.com",
+      "https://www.crunchbase.com/organization/andreessen-horowitz"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Benchmark Capital",
+    "location": "San Francisco, USA",
+    "aum_estimate": "$1B-$5B",
+    "investment_focus": "Early-stage technology",
+    "stage": "Seed, Series A",
+    "notable_investments": "Uber, Twitter, Snapchat",
+    "source_links": [
+      "https://www.benchmark.com",
+      "https://www.crunchbase.com/organization/benchmark"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Founders Fund",
+    "location": "San Francisco, USA",
+    "aum_estimate": "$1B-$5B",
+    "investment_focus": "Deep tech, AI, Space",
+    "stage": "Seed, Early-stage",
+    "notable_investments": "SpaceX, Palantir, Oculus, Airbnb",
+    "source_links": [
+      "https://foundersfund.com",
+      "https://www.crunchbase.com/organization/founders-fund"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Iconiq Capital",
+    "location": "San Francisco, USA",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Technology, Healthcare, Consumer",
+    "stage": "Growth, Late-stage",
+    "notable_investments": "JD.com, Didi, Alibaba",
+    "source_links": [
+      "https://www.iconiqcap.com",
+      "https://www.crunchbase.com/organization/iconiq-capital"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Valor Equity Partners",
+    "location": "Chicago, USA",
+    "aum_estimate": "$5B-$10B",
+    "investment_focus": "Consumer, Industrial, Healthcare",
+    "stage": "Buyout, Growth",
+    "notable_investments": "Molex, Avery Dennison",
+    "source_links": [
+      "https://www.valorcorp.com",
+      "https://www.linkedin.com/company/valor-equity-partners"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Lone Star Funds",
+    "location": "Dallas, USA",
+    "aum_estimate": "$5B-$10B",
+    "investment_focus": "Financial services, Real estate",
+    "stage": "Buyout, Distressed",
+    "notable_investments": "Acquired Deutsche Bank stake",
+    "source_links": [
+      "https://www.lonestarfunds.com",
+      "https://www.crunchbase.com/organization/lone-star-funds"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Renaissanace Technologies",
+    "location": "New York, USA",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Quantitative trading, Tech",
+    "stage": "All stages",
+    "notable_investments": "Internal Renaissance funds",
+    "source_links": [
+      "https://www.renaissance.com",
+      "https://www.forbes.com/profile/renaissance-technologies"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Two Sigma Investments",
+    "location": "New York, USA",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Quantitative investing, AI",
+    "stage": "All stages",
+    "notable_investments": "Internal fund investments",
+    "source_links": [
+      "https://www.twosigma.com",
+      "https://www.crunchbase.com/organization/two-sigma-investments"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Bridgewater Associates",
+    "location": "Westport, USA",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Macro, Hedge funds",
+    "stage": "All stages",
+    "notable_investments": "Pure Alpha fund",
+    "source_links": [
+      "https://www.bridgewater.com",
+      "https://www.crunchbase.com/organization/bridgewater-associates"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Aquila Family Office",
+    "location": "Zurich, Switzerland",
+    "aum_estimate": "$500M-$1B",
+    "investment_focus": "European tech, Healthcare",
+    "stage": "Growth, Buyout",
+    "notable_investments": "European biotech companies",
+    "source_links": [
+      "https://www.aquila-capital.ch"
+    ],
+    "confidence_score": "Medium"
+  },
+  {
+    "name": "JAB Holdings",
+    "location": "Luxembourg",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Consumer brands, Coffee, Pet care",
+    "stage": "Buyout",
+    "notable_investments": "Peets Coffee, Pret a Manger, Krispy Kreme",
+    "source_links": [
+      "https://www.jablux.com",
+      "https://www.crunchbase.com/organization/jab-holding"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Horizon Family Office",
+    "location": "London, UK",
+    "aum_estimate": "$1B-$5B",
+    "investment_focus": "FinTech, AI, Healthcare",
+    "stage": "Growth, Late-stage",
+    "notable_investments": "Revolut, Monzo",
+    "source_links": [
+      "https://www.horizonfamilyoffice.co.uk"
+    ],
+    "confidence_score": "Medium"
+  },
+  {
+    "name": "Cazenova Capital",
+    "location": "Paris, France",
+    "aum_estimate": "$500M-$1B",
+    "investment_focus": "European tech, Luxury",
+    "stage": "Growth",
+    "notable_investments": "French luxury brands",
+    "source_links": [
+      "https://www.cazenova.fr"
+    ],
+    "confidence_score": "Medium"
+  },
+  {
+    "name": "Mirae Asset",
+    "location": "Seoul, South Korea",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Technology, Infrastructure, RE",
+    "stage": "All stages",
+    "notable_investments": "Hertz, Spotify",
+    "source_links": [
+      "https://www.miraeasset.com",
+      "https://www.crunchbase.com/organization/mirae-asset"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Ant Group Family Office",
+    "location": "Hangzhou, China",
+    "aum_estimate": "$10B+",
+    "investment_focus": "FinTech, E-commerce, AI",
+    "stage": "All stages",
+    "notable_investments": "Alibaba ecosystem",
+    "source_links": [
+      "https://www.antgroup.com",
+      "https://www.crunchbase.com/organization/ant-group"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Tencent Family Office",
+    "location": "Shenzhen, China",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Tech, Gaming, Social",
+    "stage": "All stages",
+    "notable_investments": "Riot Games, Supercell, Spotify",
+    "source_links": [
+      "https://www.tencent.com",
+      "https://www.crunchbase.com/organization/tencent"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Hillhouse Capital",
+    "location": "Hong Kong",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Technology, Healthcare, Consumer",
+    "stage": "Growth, Buyout",
+    "notable_investments": "JD.com, Didi, Airbnb, Netflix",
+    "source_links": [
+      "https://www.hillhousecap.com",
+      "https://www.crunchbase.com/organization/hillhouse-capital-management"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "GIC Private Limited",
+    "location": "Singapore",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Global equities, PE, Real estate",
+    "stage": "All stages",
+    "notable_investments": "Singtel, global PE funds",
+    "source_links": [
+      "https://www.gic.com.sg",
+      "https://www.crunchbase.com/organization/gic-private-limited"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Temasek Holdings",
+    "location": "Singapore",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Diversified, Tech, Life sciences",
+    "stage": "All stages",
+    "notable_investments": "ByteDance, Airbnb, Ant Group",
+    "source_links": [
+      "https://www.temasek.com.sg",
+      "https://www.crunchbase.com/organization/temasek-holdings"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Mubadala Investment",
+    "location": "Abu Dhabi, UAE",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Technology, Energy, PE",
+    "stage": "All stages",
+    "notable_investments": "Cerner, GlobalFoundries, SoftBank",
+    "source_links": [
+      "https://www.mubadala.com",
+      "https://www.crunchbase.com/organization/mubadala-investment-company"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Abu Dhabi Investment Authority",
+    "location": "Abu Dhabi, UAE",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Global diversified",
+    "stage": "All stages",
+    "notable_investments": "Global sovereign assets",
+    "source_links": [
+      "https://www.adia.ae",
+      "https://www.crunchbase.com/organization/abu-dhabi-investment-authority"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Kuwait Investment Authority",
+    "location": "Kuwait City, Kuwait",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Global equities, Fixed income",
+    "stage": "All stages",
+    "notable_investments": "Global sovereign portfolio",
+    "source_links": [
+      "https://www.kia.gov.kw",
+      "https://www.swfinsitute.org/kuwait-investment-authority"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Saudi Public Investment Fund",
+    "location": "Riyadh, Saudi Arabia",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Technology, Diversified",
+    "stage": "All stages",
+    "notable_investments": "Uber, Lucid, Magic Leap",
+    "source_links": [
+      "https://www.pif.gov.sa",
+      "https://www.crunchbase.com/organization/public-investment-fund"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Qatar Investment Authority",
+    "location": "Doha, Qatar",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Global real estate, Finance",
+    "stage": "All stages",
+    "notable_investments": "Barclays, Credit Suisse, Harrods",
+    "source_links": [
+      "https://www.qia.qa",
+      "https://www.crunchbase.com/organization/qatar-investment-authority"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Norway Government Pension Fund",
+    "location": "Oslo, Norway",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Global equities, Bonds, RE",
+    "stage": "All stages",
+    "notable_investments": "Global equity portfolio",
+    "source_links": [
+      "https://www.nbim.no",
+      "https://www.crunchbase.com/organization/norway-government-pension-fund"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Canadian Pension Plan Investment",
+    "location": "Toronto, Canada",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Global diversified",
+    "stage": "All stages",
+    "notable_investments": "Global infrastructure, PE",
+    "source_links": [
+      "https://www.cppinvestments.com",
+      "https://www.crunchbase.com/organization/canadian-pension-plan-investment-board"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Ontario Teachers Pension Plan",
+    "location": "Toronto, Canada",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Infrastructure, PE, Real estate",
+    "stage": "All stages",
+    "notable_investments": "Brightspeed, IFF",
+    "source_links": [
+      "https://www.otpp.com",
+      "https://www.crunchbase.com/organization/ontario-teachers-pension-plan"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "AustralianSuper",
+    "location": "Melbourne, Australia",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Global equities, Infrastructure",
+    "stage": "All stages",
+    "notable_investments": "Australian infrastructure",
+    "source_links": [
+      "https://www.australiansuper.com",
+      "https://www.crunchbase.com/organization/australiansuper"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "SoftBank Vision Fund",
+    "location": "Tokyo, Japan",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Technology, AI, Telecom",
+    "stage": "Growth, Late-stage",
+    "notable_investments": "Uber, WeWork, ARM, OYO",
+    "source_links": [
+      "https://www.softbank.com",
+      "https://www.crunchbase.com/organization/softbank-vision-fund"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "StepStone Group",
+    "location": "New York, USA",
+    "aum_estimate": "$5B-$10B",
+    "investment_focus": "Private equity, Infrastructure",
+    "stage": "Fund allocation",
+    "notable_investments": "Multiple PE fund commitments",
+    "source_links": [
+      "https://www.stepstonegroup.com",
+      "https://www.crunchbase.com/organization/stepstone-group"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Helios Asset Management",
+    "location": "Paris, France",
+    "aum_estimate": "$1B-$5B",
+    "investment_focus": "African markets, Tech, Telecom",
+    "stage": "Growth, PE",
+    "notable_investments": "Safaricom, IHS Towers",
+    "source_links": [
+      "https://www.heliosim.com"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Baring Private Equity Asia",
+    "location": "Hong Kong",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Asia-focused PE",
+    "stage": "Buyout, Growth",
+    "notable_investments": "Axiata, HDFC",
+    "source_links": [
+      "https://www.baringpeasia.com",
+      "https://www.crunchbase.com/organization/baring-private-equity-asia"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "General Atlantic",
+    "location": "New York, USA",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Growth equity, Global",
+    "stage": "Growth, Late-stage",
+    "notable_investments": "Airbnb, Uber, ByteDance",
+    "source_links": [
+      "https://www.generalatlantic.com",
+      "https://www.crunchbase.com/organization/general-atlantic"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "Silver Lake Partners",
+    "location": "Menlo Park, USA",
+    "aum_estimate": "$10B+",
+    "investment_focus": "Technology, Media, Telecom",
+    "stage": "Buyout",
+    "notable_investments": "Alibaba, Dell, Twitter",
+    "source_links": [
+      "https://www.silverlake.com",
+      "https://www.crunchbase.com/organization/silver-lake-partners"
+    ],
+    "confidence_score": "High"
+  },
+  {
+    "name": "AlixPartners Family Office",
+    "location": "New York, USA",
+    "aum_estimate": "$500M-$1B",
+    "investment_focus": "Turnaround, Restructuring",
+    "stage": "All stages",
+    "notable_investments": "Corporate restructuring investments",
+    "source_links": [
+      "https://www.alixpartners.com"
+    ],
+    "confidence_score": "Medium"
+  }
+]
