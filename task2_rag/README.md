@@ -1,4 +1,4 @@
-# Family Office Dataset & RAG Pipeline
+# Family Office task1_dataset & RAG Pipeline
 
 ## Overview
 
@@ -6,10 +6,10 @@ This project delivers decision-grade data on Family Offices combined with a prod
 
 ---
 
-## Task 1: Dataset — Family Offices (Decision-Grade)
+## Task 1: task1_dataset — Family Offices (Decision-Grade)
 
 ### Goal
-Build a curated dataset of 30-50 high-quality Family Offices suitable for investment decisions.
+Build a curated task1_dataset of 30-50 high-quality Family Offices suitable for investment decisions.
 
 ### Schema
 
@@ -43,7 +43,7 @@ Build a curated dataset of 30-50 high-quality Family Offices suitable for invest
    - **Medium**: 2+ sources, industry reports, credible news
    - **Low**: Single source, inferential data
 
-### Dataset Statistics
+### task1_dataset Statistics
 - **Total Records**: 50 Family Offices
 - **Geographic Distribution**: US (22), Europe (5), Asia (10), Middle East (5), Other (8)
 - **AUM Distribution**: $10B+ (15), $5B-$10B (10), $1B-$5B (15), $500M-$1B (10)
@@ -58,7 +58,7 @@ Build a curated dataset of 30-50 high-quality Family Offices suitable for invest
 ## Task 2: RAG Pipeline
 
 ### Goal
-Build a queryable system that leverages the Family Office dataset with semantic search.
+Build a queryable system that leverages the Family Office task1_dataset with semantic search.
 
 ### Architecture
 
@@ -92,9 +92,10 @@ Build a queryable system that leverages the Family Office dataset with semantic 
 ```
 
 ### Tech Stack
-- **Embeddings**: `sentence-transformers/all-MiniLM-L6-v2` (local, free) or Gemini API
-- **Vector DB**: ChromaDB (local persistence)
+- **Embeddings**: LangChain with Google Gemini API or `sentence-transformers/all-MiniLM-L6-v2` (local, free)
+- **Vector DB**: ChromaDB (local persistence) via LangChain
 - **Hybrid Search**: Semantic + BM25 keyword matching
+- **Re-Ranking**: Custom keyword + confidence scoring
 
 ### Usage
 
@@ -128,8 +129,12 @@ python3 investor_rag.py
 ## Dependencies
 
 ```
-# Core dependencies
+# Core dependencies (in requirements.txt)
+pip install -r ../requirements.txt
+
+# Or install individually:
 pip install chromadb
+pip install langchain langchain-community langchain-google-genai
 pip install sentence-transformers
 pip install google-genai  # Optional, for Gemini embeddings
 pip install python-dotenv
@@ -167,17 +172,17 @@ pip install python-dotenv
 
 ## Limitations & Future Work
 
-1. **Dataset**
+1. **task1_dataset**
    - Add more European and emerging market FOs
    - Include contact information for direct outreach
    - Track portfolio company exits for performance data
 
 2. **Pipeline**
    - Add LLM for natural language answer generation
-   - Implement re-ranking for better result quality
    - Add filtering by AUM range, geography, stage
+   - Integrate more data sources
 
 ---
 
 *Generated: 2026-03-30*
-*Dataset: 50 Family Offices | Pipeline: Hybrid RAG with ChromaDB*
+*task1_dataset: 50 Family Offices | Pipeline: Hybrid RAG with ChromaDB*

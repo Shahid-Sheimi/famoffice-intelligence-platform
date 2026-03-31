@@ -27,6 +27,7 @@ MANIFEST
 
 # Virtual environments
 venv/
+ven/
 ENV/
 env/
 .venv

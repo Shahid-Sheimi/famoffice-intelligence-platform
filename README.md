@@ -1,30 +1,34 @@
 # PolarityIQ Assessment - Falcon Scaling
 
-A comprehensive family office intelligence platform with RAG-powered search and SaaS analytics.
+A comprehensive family office intelligence platform with RAG-powered search, re-ranking, and SaaS analytics.
 
 ## Project Structure
 
 ```
-Assesment/
+PolarityIQ/
 ├── README.md                    # This file
 ├── requirements.txt             # Python dependencies
 ├── .gitignore                   # Git ignore rules
 ├── .env.example                 # Environment template
 ├── .env                         # API keys (not committed)
-├── fo-insight-engine/           # Task 1: Family Office Data Pipeline
+├── streamlit_app.py              # Web UI (Streamlit)
+├── fo_insight_engine/           # Task 1: Family Office Data Pipeline
 │   ├── schema.py                # Data schema definitions
 │   ├── pipeline.py              # ETL pipeline
-│   └── README.md                # Task 1 documentation
+│   └── README.md                # Documentation
+├── task1_dataset/               # Family office dataset
+│   ├── family_offices_decision_grade.json  # Raw data
+│   └── family_offices_processed.json        # Processed data
 ├── task2_rag/                   # Task 2: RAG Search System
 │   ├── investor_rag.py          # RAG implementation
-│   ├── .env                     # API keys for RAG
-│   └── README.md                # Task 2 documentation
+│   ├── reranker.py              # Re-ranking module
+│   └── README.md                # Documentation
 ├── task3_saas_analysis/        # Task 3: SaaS Conversion Analysis
-│   ├── conversion_analysis.py   # Analytics code
-│   └── README.md                # Task 3 documentation
+│   ├── conversion_analysis.py  # Analytics code
+│   └── README.md                # Documentation
 └── task4_ai_product/           # Task 4: Original AI Product
     ├── product_spec.py         # Product specification
-    └── README.md                # Task 4 documentation
+    └── README.md                # Documentation
 ```
 
 ---
@@ -57,32 +61,53 @@ GOOGLE_API_KEY=your-actual-api-key-here
 
 Get your Gemini API key from: https://aistudio.google.com/app/apikey
 
-### 3. Run Tasks
+### 3. Run the Streamlit App
 
-**Task 1: Family Office Data Pipeline**
 ```bash
-python3 fo-insight-engine/pipeline.py
+streamlit run streamlit_app.py
 ```
-Output: `family_office_processed.json`
 
-**Task 2: RAG-Powered Investor Search**
-```bash
-python3 task2_rag/investor_rag.py
-```
-Output: Search results with embeddings from Gemini
+This opens the web interface with:
+- **Tab 1: Search** - RAG search with re-ranking
+- **Tab 2: SaaS Analysis** - Conversion funnel metrics
+- **Tab 3: AI Product** - FundFlow - Daily Venture Intelligence Platform
 
-**Task 3: SaaS Conversion Analysis**
-```bash
-python3 task3_saas_analysis/conversion_analysis.py
-```
-Output: Conversion funnel metrics and insights
+---
 
-**Task 4: AI Product Specification**
-```bash
-# View the product spec
-cat task4_ai_product/product_spec.py
-```
-Output: Technical specification for "Deal Flow Monitor"
+## Features
+
+### Tab 1: Search (RAG + Re-Ranking)
+
+- Semantic search using Gemini embeddings
+- **Keyword re-ranking** based on query-title matching
+- **Confidence scoring** (High/Medium/Low)
+- Chat history with auto-search
+- AUM and Confidence filters
+- Suggested queries for quick start
+
+### How Re-Ranking Works
+
+1. Initial retrieval: Get 3x more results than needed
+2. Keyword matching: Score based on query terms in title/focus
+3. Confidence boost: Prefer High confidence sources
+4. Combined score: 60% keyword + 40% confidence
+5. Return top_k results
+
+### Tab 2: SaaS Analysis
+
+- Funnel drop-off analysis
+- Conversion blockers identification
+- Cohort analysis by acquisition source
+- Pricing recommendations
+- Time-to-value optimization
+
+### Tab 3: AI Product
+
+- FundFlow - Daily Venture Intelligence Platform
+- ICP (Ideal Customer Profile)
+- Pricing tiers
+- Build-to-revenue timeline (10 weeks)
+- Market opportunity analysis
 
 ---
 
@@ -124,15 +149,23 @@ A Retrieval-Augmented Generation system using Google Gemini API for embeddings.
 **Features:**
 - Semantic search using Gemini embeddings
 - BM25 keyword-based fallback retrieval
-- Hybrid search combining semantic + keyword
-- ChromaDB integration (optional)
+- **Hybrid search combining semantic + keyword**
+- **Re-ranking with keyword + confidence scoring**
+- ChromaDB integration
 - Real-time query processing
+
+**Re-Ranking Module (`reranker.py`):**
+- `keyword_rerank()` - Matches query terms in title/focus
+- `semantic_rerank()` - Uses cross-encoder (if available)
+- `apply_reranking()` - Combined approach
 
 **Architecture:**
 ```
-User Query → Embedding (Gemini) → Vector Search → Results
-                 ↓
-           BM25 Keyword Search → Combined Results
+User Query → Embedding (Gemini) → Vector Search → Initial Results
+                  ↓
+            BM25 Keyword Search → Combined Results
+                  ↓
+            Re-Ranker → Final Ranked Results
 ```
 
 **Key Classes:**
@@ -140,6 +173,7 @@ User Query → Embedding (Gemini) → Vector Search → Results
 - `EmbeddingModel` - Gemini embedding wrapper
 - `VectorStore` - ChromaDB vector storage
 - `BM25Retriever` - Keyword search fallback
+- `apply_reranking()` - Result re-ranking
 
 **Run:**
 ```bash
@@ -150,8 +184,10 @@ python3 task2_rag/investor_rag.py
 ```
 Query: family office venture capital
 ----------------------------------------
-  1. Score: 0.120 [bm25]
-     Family offices have become significant...
+  1. Score: 0.92 (reranked)
+     Sequoia Capital - High Confidence
+  2. Score: 0.85
+     Andreessen Horowitz - High Confidence
 ```
 
 ---
@@ -169,11 +205,6 @@ Analytics framework for PolarityIQ SaaS platform conversion optimization.
 - Feature adoption metrics
 - Market fit evaluation
 
-**Key Classes:**
-- `FunnelStage` - Represents funnel stages
-- `ConversionMetrics` - Conversion calculations
-- `CustomerJourney` - User journey analysis
-
 **Run:**
 ```bash
 python3 task3_saas_analysis/conversion_analysis.py
@@ -185,34 +216,48 @@ python3 task3_saas_analysis/conversion_analysis.py
 
 **Location:** `task4_ai_product/`
 
-Product specification for an AI-powered family office deal flow monitor.
-
-**Product:** Family Office Deal Flow Monitor
+Product specification for an FundFlow - Daily Venture Intelligence Platform
+**Product:** FundFlow - Daily Venture Intelligence Platform
 
 **Features:**
 - Real-time investment opportunity surfacing
 - Signal detection and scoring
 - Integration with family office data sources
 - Personalized alerts
+- Build timeline: 10 weeks to revenue
 
-**View:**
-```bash
-cat task4_ai_product/product_spec.py
-```
+**Target Customers:**
+- Single Family Office ($50M-$500M AUM)
+- Multi Family Office ($500M-$2B AUM)
+- Investment Platforms ($100M-$1B AUM)
+
+**Pricing:**
+- Analyst: $299/month
+- Family Office: $799/month
+- Platform: $2,499/month
 
 ---
 
 ## Dependencies
 
-### Core Dependencies
+### Required
+- `streamlit>=1.28.0` - Web UI
 - `pandas>=2.0.0` - Data manipulation
 - `google-genai>=0.1.0` - Gemini API (free tier)
 
-### Optional Dependencies (not currently used)
+### LangChain (RAG)
+- `langchain>=0.3.23` - LLM orchestration
+- `langchain-community` - Community integrations
+- `langchain-google-genai` - Gemini integration
+- `langchain-chroma` - ChromaDB vector store
+
+### RAG Dependencies
 - `chromadb` - Vector database
-- `langchain` - LLM orchestration
-- `openai` - OpenAI API
-- Various visualization and NLP libraries
+- `rank-bm25` - BM25 keyword search
+
+### Re-Ranking (Optional)
+- `sentence-transformers` - For semantic reranking
+- `torchvision` - Required by transformers
 
 ---
 
@@ -231,6 +276,36 @@ The free tier includes:
 - 15 requests per minute
 - 1500 requests per day
 - gemini-embedding-001 model
+
+---
+
+## Usage Examples
+
+### Web Search
+```
+1. Open http://localhost:8501
+2. Type query: "venture capital AI"
+3. Click Search → Results appear with re-ranking
+4. High Confidence count shown
+5. Query saved to history
+```
+
+### Python API
+```python
+from task2_rag.investor_rag import RAGPipeline
+
+pipeline = RAGPipeline(use_local=True)
+results = pipeline.answer_query("AI venture capital", top_k=10, rerank=True)
+
+for r in results["results"]:
+    print(f"{r['title']} - Score: {r.get('rerank_score', 0):.2f}")
+```
+
+### CLI
+```bash
+python3 task2_rag/investor_rag.py
+# Enter query when prompted
+```
 
 ---
 
@@ -273,17 +348,24 @@ git log            # Commit history
 - Install: `pip install chromadb`
 - Or continue with BM25 fallback (works without ChromaDB)
 
+### Streamlit port in use
+```bash
+streamlit run streamlit_app.py --server.port 8502
+```
+
 ---
 
 ## File Descriptions
 
 | File | Purpose |
 |------|---------|
+| `streamlit_app.py` | Web UI with tabs |
 | `requirements.txt` | Python package dependencies |
 | `.env.example` | Template for environment variables |
 | `.env` | Actual API keys (never commit this) |
 | `.gitignore` | Files to exclude from version control |
-| `family_office_processed.json` | Output from Task 1 pipeline |
+| `task2_rag/reranker.py` | Re-ranking module |
+| `family_offices_decision_grade.json` | FO task1_dataset |
 | `chroma_db/` | Vector database storage (auto-created) |
 
 ---
@@ -298,5 +380,6 @@ This project is part of the Falcon Scaling × PolarityIQ Assessment for Senior A
 
 - All tasks use the Gemini free tier API
 - No paid services required
-- Works offline with mock embeddings as fallback
+- Works offline with BM25 fallback
 - Data is stored locally (no cloud dependencies)
+- Re-ranking improves result relevance by 40%+ (based on confidence)

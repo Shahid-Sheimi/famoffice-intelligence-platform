@@ -1,31 +1,16 @@
 [
-  {
-    "entity_type": "Single Family Office",
-    "name": "Rockefeller Capital Management",
-    "location": "New York, USA",
-    "region": "North America",
-    "aum_estimate": "$5B-$10B",
-    "investment_focus": "Private Equity, Venture Capital, Real Estate",
-    "stage": "Growth, Buyout",
-    "notable_investments": "Palantir, Stripe, Airbnb",
-    "source_links": [
-      "https://www.rockefellercapital.com",
-      "https://www.crunchbase.com/organization/rockefeller-capital"
-    ],
-    "data_verified": "2026-03-30",
-    "confidence_score": "High"
-  },
+
   {
     "entity_type": "Multi Family Office / Wealth Manager",
     "name": "Bessemer Trust",
-    "location": "San Francisco, USA",
+    "location": "New York, USA",
     "region": "North America",
     "aum_estimate": "$10B+",
     "investment_focus": "Equities, Fixed Income, Alternatives",
     "stage": "All stages",
     "notable_investments": "Tesla early investor, Pinterest",
     "source_links": [
-      "https://www.bessemer.com",
+      "https://www.bessemertrust.com",
       "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001080076"
     ],
     "data_verified": "2026-03-30",
@@ -41,7 +26,6 @@
     "stage": "Growth, Late-stage",
     "notable_investments": "Autotrader, Kelley Blue Book",
     "source_links": [
-      "https://www.coxenterprises.com",
       "https://www.crunchbase.com/organization/cox-enterprises"
     ],
     "data_verified": "2026-03-30",
@@ -58,7 +42,7 @@
     "notable_investments": "Genuine Parts, Vishay Intertechnology",
     "source_links": [
       "https://www.pritzkergroup.com",
-      "https://www.linkedin.com/company/pritzker-group"
+      "https://www.linkedin.com/company/pritzker-private-capital"
     ],
     "data_verified": "2026-03-30",
     "confidence_score": "High"
@@ -74,7 +58,7 @@
     "notable_investments": "Local tech startups, commercial real estate",
     "source_links": [
       "https://www.sundt.com",
-      "https://www.phoenixbusinessjournal.com"
+      "https://www.bizjournals.com/phoenix"
     ],
     "data_verified": "2026-03-30",
     "confidence_score": "Medium"
@@ -152,7 +136,8 @@
     "stage": "Growth",
     "notable_investments": "Legal tech startups",
     "source_links": [
-      "https://www.sullcrom.com"
+      "https://www.sullcrom.com",
+      "https://www.crunchbase.com/organization/sullivan-cromwell"
     ],
     "data_verified": "2026-03-30",
     "confidence_score": "Low"
@@ -167,7 +152,7 @@
     "stage": "Growth, Late-stage",
     "notable_investments": "JD.com, Didi, Alibaba",
     "source_links": [
-      "https://www.iconiqcap.com",
+      "https://www.iconiqcapital.com",
       "https://www.crunchbase.com/organization/iconiq-capital"
     ],
     "data_verified": "2026-03-30",
@@ -183,8 +168,8 @@
     "stage": "Buyout",
     "notable_investments": "Peets Coffee, Pret a Manger, Krispy Kreme",
     "source_links": [
-      "https://www.jablux.com",
-      "https://www.crunchbase.com/organization/jab-holding"
+      "https://www.jabholco.com",
+      "https://www.crunchbase.com/organization/jab-holding-company"
     ],
     "data_verified": "2026-03-30",
     "confidence_score": "High"
@@ -199,7 +184,8 @@
     "stage": "Growth, Buyout",
     "notable_investments": "European biotech companies",
     "source_links": [
-      "https://www.aquila-capital.ch"
+      "https://www.aquila-capital.de",
+      "https://www.linkedin.com/company/aquila-capital"
     ],
     "data_verified": "2026-03-30",
     "confidence_score": "Medium"
@@ -214,7 +200,8 @@
     "stage": "Growth, Late-stage",
     "notable_investments": "Revolut, Monzo",
     "source_links": [
-      "https://www.horizonfamilyoffice.co.uk"
+      "https://www.horizonfamilyoffice.co.uk",
+      "https://www.linkedin.com/company/horizon-family-office"
     ],
     "data_verified": "2026-03-30",
     "confidence_score": "Medium"
@@ -229,7 +216,8 @@
     "stage": "Growth",
     "notable_investments": "French luxury brands",
     "source_links": [
-      "https://www.cazenova.fr"
+      "https://www.cazenova.fr",
+      "https://www.linkedin.com/company/cazenova-capital"
     ],
     "data_verified": "2026-03-30",
     "confidence_score": "Medium"
@@ -271,15 +259,15 @@
   {
     "entity_type": "Single Family Office",
     "name": "Renaissance Technologies",
-    "location": "New York, USA",
+    "location": "East Setauket, New York, USA",
     "region": "North America",
     "aum_estimate": "$10B+",
     "investment_focus": "Quantitative trading, Tech",
     "stage": "All stages",
     "notable_investments": "Internal Renaissance funds",
     "source_links": [
-      "https://www.renaissance.com",
-      "https://www.forbes.com/profile/renaissance-technologies"
+      "https://www.rentec.com",
+      "https://en.wikipedia.org/wiki/Renaissance_Technologies"
     ],
     "data_verified": "2026-03-30",
     "confidence_score": "High",

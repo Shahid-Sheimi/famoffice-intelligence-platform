@@ -3,12 +3,11 @@
 Task 2: RAG Pipeline for Investor Intelligence
 ==========================================
 Production-grade RAG system for family office investor queries.
-Connects to actual Family Office dataset from Task 1.
+Connects to actual Family Office task1_dataset from Task 1.
 
 Features:
 - Document ingestion and chunking
-- Embedding model selection (Gemini or local sentence-transformers)
-- ChromaDB vector store
+- LangChain integration for embeddings and vector store
 - Hybrid retrieval (semantic + BM25)
 - Query evaluation with actual FO data
 """
@@ -25,6 +24,7 @@ load_dotenv()
 
 # Try to import optional dependencies
 CHROMADB_AVAILABLE = False
+LANGCHAIN_AVAILABLE = False
 GEMINI_AVAILABLE = False
 SENTENCE_TRANSFORMERS_AVAILABLE = False
 
@@ -32,6 +32,14 @@ try:
     import chromadb
     from chromadb.config import Settings
     CHROMADB_AVAILABLE = True
+except ImportError:
+    pass
+
+try:
+    from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
+    from langchain_chroma import Chroma
+    from langchain_core.documents import Document
+    LANGCHAIN_AVAILABLE = True
 except ImportError:
     pass
 
@@ -48,7 +56,7 @@ except ImportError:
     pass
 
 
-def load_family_office_data(json_path: str = "task1_dataset/family_offices_decision_grade.json") -> List[Dict[str, Any]]:
+def load_family_office_data(json_path: str = "../task1_dataset/family_offices_processed.json") -> List[Dict[str, Any]]:
     """
     Load Family Office data from JSON file for RAG ingestion.
     
@@ -66,30 +74,44 @@ def load_family_office_data(json_path: str = "task1_dataset/family_offices_decis
         for i, fo in enumerate(data):
             # Create rich text content for embedding
             content = f"""
+            Entity Type: {fo.get('entity_type', 'Unknown')}
             Family Office: {fo.get('name', 'Unknown')}
             Location: {fo.get('location', 'Unknown')}
+            Region: {fo.get('region', 'Unknown')}
             AUM Estimate: {fo.get('aum_estimate', 'Unknown')}
             Investment Focus: {fo.get('investment_focus', 'Unknown')}
             Stage Preference: {fo.get('stage', 'Unknown')}
             Notable Investments: {fo.get('notable_investments', 'Unknown')}
             Confidence Score: {fo.get('confidence_score', 'Unknown')}
+            Data Verified: {fo.get('data_verified', 'Unknown')}
             Sources: {', '.join(fo.get('source_links', []))}
+
             """.strip()
+            
+            # Build metadata with only non-empty values
+            metadata = {
+                "type": "family_office",
+                "name": fo.get('name', 'Unknown Family Office')
+            }
+            
+            # Add all available fields to metadata
+            for field in ['entity_type', 'location', 'region', 'aum_estimate', 
+                         'investment_focus', 'stage', 'notable_investments', 
+                         'confidence_score', 'data_verified', 'notes']:
+                value = fo.get(field)
+                if value and str(value).strip():  # Only add if not empty
+                    metadata[field] = value
+            
+            # Handle source_links separately (it's a list)
+            source_links = fo.get('source_links', [])
+            if source_links:
+                metadata['source_links'] = source_links
             
             doc = {
                 "id": f"fo_{i+1:03d}",
                 "title": fo.get('name', 'Unknown Family Office'),
                 "content": content,
-                "metadata": {
-                    "type": "family_office",
-                    "name": fo.get('name', ''),
-                    "location": fo.get('location', ''),
-                    "aum_estimate": fo.get('aum_estimate', ''),
-                    "investment_focus": fo.get('investment_focus', ''),
-                    "stage": fo.get('stage', ''),
-                    "confidence_score": fo.get('confidence_score', ''),
-                    "source_links": fo.get('source_links', [])
-                }
+                "metadata": metadata
             }
             documents.append(doc)
         
@@ -371,6 +393,7 @@ class BM25Retriever:
         for doc_idx, score in sorted_idx[:top_k]:
             results.append({
                 "id": self.documents[doc_idx]["id"],
+                "title": self.documents[doc_idx].get("title", ""),
                 "document": self.documents[doc_idx]["content"],
                 "score": score,
                 "metadata": self.documents[doc_idx].get("metadata", {}),
@@ -482,16 +505,33 @@ class RAGPipeline:
         
         return results
     
-    def answer_query(self, query: str, top_k: int = 5) -> Dict[str, Any]:
+    def answer_query(self, query: str, top_k: int = 5, rerank: bool = True) -> Dict[str, Any]:
         """
         Answer a query using the RAG system.
+        
+        Args:
+            query: Search query string
+            top_k: Number of results to return
+            rerank: Whether to apply reranking (default: True)
         """
-        results = self.hybrid_search(query, top_k=top_k)
+        # Get more results than needed for reranking
+        retrieve_k = top_k * 3 if rerank else top_k
+        results = self.hybrid_search(query, top_k=retrieve_k)
+        
+        # Apply reranking if enabled
+        if rerank and results:
+            try:
+                from task2_rag.reranker import apply_reranking
+                results = apply_reranking(query, results, method='keyword', top_k=top_k)
+            except Exception as e:
+                # If reranking fails, use original results
+                pass
         
         return {
             "query": query,
             "results": results,
-            "num_results": len(results)
+            "num_results": len(results),
+            "reranked": rerank
         }
 
 
